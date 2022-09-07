@@ -36,8 +36,9 @@ df.r <- rbind(p,df)
 df.r
 
 # Export the data frame as a .csv file
-# I don't see the file anywhere :/
 write.csv(df.r, file = "Thomas.csv")
+setwd("C:/GitHub/morgan/data")
+getwd()
 
 # Generate summary statistics of your data frame and copy them as text into your script under a new section heading.
 summary(df.r)
@@ -55,5 +56,6 @@ summary(df.r)
 # Mode  :character   Mode  :character 
 
 # Push your script and your .csv file to GitHub in a new "Week1" folder.
+write.csv(df.r, file = "Thomas.csv")
 
 
