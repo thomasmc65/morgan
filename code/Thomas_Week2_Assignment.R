@@ -56,3 +56,9 @@ plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response", main = 
 # Upload both plots with the script used to create them to GitHub.
   # Follow the same file naming format as last week for the script.
   # Name plots as Lastname_barplot or Lastname_scatterplot. Save them to your "plots" folder.
+
+setwd("C:/GitHub/morgan")
+pdf(file = "Thomas_scatterplot", width = 6, height = 6)
+par(family = "serif")
+plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response", main = "Morgan's Scatter Plot", pch=16, col ="slateblue1")
+dev.off
