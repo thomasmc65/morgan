@@ -23,7 +23,6 @@ colnames(add.row) <- colnames(df)
 colnames(add.row)
 df1 <- rbind(df, add.row)
 df1
-df1[-1]
 
 # Create a barplot for one numeric column, grouped by the character vector with 3 unique values
   # Add error bars with mean and standard deviation to the plot
@@ -52,6 +51,7 @@ arrows(b.plot, df.mean$Mean-df.sd$StanDev,
 plot(df1$dec.num ~ df1$rep.num)
 plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response")
 plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response", main = "Morgan's Scatter Plot")
+plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response", main = "Morgan's Scatter Plot", pch=16, col ="slateblue1")
 
 # Upload both plots with the script used to create them to GitHub.
   # Follow the same file naming format as last week for the script.
