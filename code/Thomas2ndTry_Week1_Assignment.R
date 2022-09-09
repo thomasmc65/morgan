@@ -7,7 +7,7 @@
   # One character vector with all unique values
 unique.char <- c("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o")
   # One character vector with exactly 3 unique values
-group.char <- c("a","a","a","b","c","c","c","d","e","e","e","f","g","g","g")
+group.char <- c("a","a","a","b","c","c","c","d","e","e","e","f","g","g","g") #more than three unique values...
   # One numeric vector with all unique values
 uniqu.num <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
   # One numeric vector with some repeated values (number of your choosing)
@@ -21,12 +21,12 @@ df
 df$uniqu.num <- as.numeric(as.character(df$uniqu.num))
 df$rep.num <- as.numeric(as.character(df$rep.num))
 df$dec.num <- as.numeric(as.character(df$dec.num))
-row.names(df) <- c("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o")
+row.names(df) <- c("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o") #sort of cheating/long way to do it, but you got the right answer!
 row.names(df)
 df
 
 # Remove the character vector with unique values from the data frame.
-df[-1]
+df[-1]#this only prints it without the values. You forgot to use <- to create a new object including it.
 
 # Add 1 row with unique numeric values to the data frame.
 add.row <- data.frame("p","h",16,10,16)
@@ -62,5 +62,5 @@ summary(df1)
 # Max.   :16.00
 
 # Push your script and your .csv file to GitHub in a new "Week1" folder.
-setwd("C:/GitHub/morgan/data")
+setwd("C:/GitHub/morgan/data")#this is right, but out of order. If you want to save the csv here this line needs to go above line 41.
 getwd()
