@@ -30,7 +30,7 @@ colnames(df.mean) <- c("Factor","Mean")
 df.mean
 barplot(df.mean$Mean)
 barplot(df.mean$Mean, names.arg = df.mean$Factor)
-df.sd <- aggregate(df.mean$rep.num ~df.mean$group.char, FUN = "sd")
+df.sd <- aggregate(df1$rep.num ~df1$group.char, FUN = "sd")
 colnames(df.sd) <- c("Factor","StanDev")
 df.sd
 b.plot <- barplot(df.mean$Mean, names.arg = df.mean$Factor)
