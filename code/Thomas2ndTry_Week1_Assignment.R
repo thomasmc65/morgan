@@ -7,7 +7,7 @@
   # One character vector with all unique values
 unique.char <- c("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o")
   # One character vector with exactly 3 unique values
-group.char <- c("a","a","a","b","c","c","c","d","e","e","e","f","g","g","g") #more than three unique values...
+group.char <- c("a","a","a","a","a","b","b","b","b","b","c","c","c","c","c") #more than three unique values...
   # One numeric vector with all unique values
 uniqu.num <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
   # One numeric vector with some repeated values (number of your choosing)
@@ -27,17 +27,21 @@ df
 
 # Remove the character vector with unique values from the data frame.
 df[-1]#this only prints it without the values. You forgot to use <- to create a new object including it.
+df1 <- df[-1]
+df1
 
 # Add 1 row with unique numeric values to the data frame.
-add.row <- data.frame("p","h",16,10,16)
+add.row <- data.frame("p","c",16,10,16)
 add.row
 colnames(add.row) <- colnames(df) 
 colnames(add.row)
 df1 <- rbind(df, add.row)
+df1 <- df1[-1]
 df1
-df1[-1]
 
 # Export the data frame as a .csv file
+setwd("C:/GitHub/morgan/data")
+getwd()
 write.csv(df1[-1], file = "Thomas2ndTry.csv")
 
 # Generate summary statistics of your data frame and copy them as text into your script under a new section heading.
