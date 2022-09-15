@@ -63,12 +63,12 @@ plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response", main = 
   # Name plots as Lastname_barplot or Lastname_scatterplot. Save them to your "plots" folder.
 
 setwd("C:/GitHub/morgan")
-jpeg(file = "Thomas_scatterplot", width = 6, height = 6)
+jpeg(file = "Thomas_scatterplot.jpeg", width = 6, height = 6)
 par(family = "serif")
 plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response", main = "Morgan's Scatter Plot", pch=16, col ="slateblue1")
-dev.off#So close - this needs to be dev.off()
+dev.off()#So close - this needs to be dev.off()
 
-pdf(file = "Thomas_barplot", width = 4, height = 7)
+pdf(file = "Thomas_barplot.pdf", width = 4, height = 7)
 #Also so close - need to specify the barplot right here between pdf() and dev.off(). Everything else was spot on!
 par(family = "serif")
-dev.off
+dev.off()
