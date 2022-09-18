@@ -41,7 +41,7 @@ b.plot <- arrows(b.plot, df.mean$Mean-df.sd$StanDev,
                  b.plot, df.mean$Mean+df.sd$StanDev,angle=90,code=3)
 b.plot <- barplot(df.mean$Mean, names.arg = df.mean$Factor)
 arrows(b.plot, df.mean$Mean-df.sd$StanDev,
-       b.plot, df.mean$Mean+df.sd$StanDev,angle=90,code=3)
+       b.plot, df.mean$Mean+df.sd$StanDev,angle=90,code=3) #I would delete extra code like this in the future - it can lead to confusion and mistakes if you're not careful.
 b.plot <- barplot(df.mean$Mean, names.arg = df.mean$Factor, ylim = c(0,15))
 b.plot <- arrows(b.plot, df.mean$Mean-df.sd$StanDev,
                  b.plot, df.mean$Mean+df.sd$StanDev,angle=90,code=3)
@@ -63,10 +63,12 @@ plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response", main = 
   # Name plots as Lastname_barplot or Lastname_scatterplot. Save them to your "plots" folder.
 
 setwd("C:/GitHub/morgan")
-jpeg(file = "Thomas_scatterplot", width = 6, height = 6)
+jpeg(file = "Thomas_scatterplot.jpeg", width = 6, height = 6)
 par(family = "serif")
 plot(df1$dec.num ~ df1$rep.num, xlab = "Explanatory", ylab = "Response", main = "Morgan's Scatter Plot", pch=16, col ="slateblue1")
-dev.off
-pdf(file = "Thomas_barplot", width = 4, height = 7)
+dev.off()#So close - this needs to be dev.off()
+
+pdf(file = "Thomas_barplot.pdf", width = 4, height = 7)
+#Also so close - need to specify the barplot right here between pdf() and dev.off(). Everything else was spot on!
 par(family = "serif")
-dev.off
+dev.off()

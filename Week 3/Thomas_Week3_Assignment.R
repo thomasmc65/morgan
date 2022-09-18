@@ -18,7 +18,14 @@
           # By manipulating these parameters you can see how it impacts the results.
           # This type of manipulation is one example of how theoretical ecology and modelling are used to predict patterns in nature.
 
+install.packages("learnPopGen")
+genetic.drift(p0=0.5, Ne=20, nrep=10, time=100, show="p", pause=0.1)
+object<-genetic.drift(p0=0.5, Ne=20, nrep=10, time=100, show="p", pause=0.1)
+plot(object,show="p")
 
+genetic.drift(p0=0.7, Ne=50, nrep=25, time=150, show="genotypes", pause=0.1)
+object<-genetic.drift(p0=0.7, Ne=50, nrep=25, time=150, show="genotypes", pause=0.1)
+plot(object,show="genotypes")
 
 ## (4) Using Google and ONLY packages from GitHub or CRAN:
     # Find a package that will generate standard diversity metrics for community ecology, specifically Simpson's Diversity Index.
@@ -32,5 +39,6 @@
           # Diversity metrics are frequently used in community ecology for reasons ranging from a quick comparison between sites to understanding community stability.
           # Their calculation can be very tedious by hand - and very fast with a package designed for the operation.
 
+install.packages("vegan")
 
 
