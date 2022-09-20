@@ -57,11 +57,13 @@ simpson.unb(x, inverse = FALSE)
 x <- c(12, 4, 3, 1, 2, 1)
 diversity(x, index = "invsimpson", groups = 6, equalize.groups = FALSE, MARGIN = 1, base = exp(1))
 invsimpson(x, inverse = TRUE)
+#6 
+#1
 
 setwd("C:/GitHub/morgan")
-jpeg(file = "Thomas Genetic Drift Reference Manual Example.jpeg", width = 4, height = 3)
+jpeg(file = "Thomas Genetic Drift Reference Manual Example.jpeg")
 par(family = "serif")
 dev.off()
-jpeg(file = "Thomas Genetic Drift Manipulated Example.jpeg", width = 4, height = 3)
+jpeg(file = "Thomas Genetic Drift Manipulated Example.jpeg")
 par(family = "serif")
 dev.off()
