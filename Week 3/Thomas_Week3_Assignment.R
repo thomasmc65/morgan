@@ -54,6 +54,9 @@ diversity(x, index = "simpson", groups = 6, equalize.groups = FALSE, MARGIN = 1,
 simpson.unb(x, inverse = FALSE)
 #[1] 0.6587302
 
+#diversity(df, index = "simpson")
+#index = c("simpson","shannon"",...)
+
 x <- c(12, 4, 3, 1, 2, 1)
 diversity(x, index = "invsimpson", groups = 6, equalize.groups = FALSE, MARGIN = 1, base = exp(1))
 invsimpson(x, inverse = TRUE)
