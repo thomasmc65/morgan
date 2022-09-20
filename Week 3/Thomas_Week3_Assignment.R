@@ -3,7 +3,7 @@
 
 
 # (2) Give one reason why information on the time between peak flow events up- and downstream could be valuable? (4 pts)
-#One reason why information on the time between peak flow events up- and downstream could be valuable is for predicting flooding. ???
+#One reason why information on the time between peak flow events up- and downstream could be valuable is for predicting flooding. Also, it helps with better understanding the stream's hydrology and discharge.
 
 # Package scavenger hunt! (12 pts each)
 
@@ -19,6 +19,7 @@
           # This type of manipulation is one example of how theoretical ecology and modelling are used to predict patterns in nature.
 
 install.packages("learnPopGen")
+library(learnPopGen)
 genetic.drift(p0=0.5, Ne=20, nrep=10, time=100, show="p", pause=0.1)
 object<-genetic.drift(p0=0.5, Ne=20, nrep=10, time=100, show="p", pause=0.1)
 plot(object,show="p")
@@ -40,5 +41,27 @@ plot(object,show="genotypes")
           # Their calculation can be very tedious by hand - and very fast with a package designed for the operation.
 
 install.packages("vegan")
+library(vegan)
+install.packages("permute")
+install.packages("lattice")
+library(permute)
+library(lattice)
+install.packages("diveRsity")
+library(diveRsity)
 
+x <- c(15, 6, 4, 0, 3, 0)
+diversity(x, index = "simpson", groups = 6, equalize.groups = FALSE, MARGIN = 1, base = exp(1))
+simpson.unb(x, inverse = FALSE)
+#[1] 0.6587302
 
+x <- c(12, 4, 3, 1, 2, 1)
+diversity(x, index = "invsimpson", groups = 6, equalize.groups = FALSE, MARGIN = 1, base = exp(1))
+invsimpson(x, inverse = TRUE)
+
+setwd("C:/GitHub/morgan")
+jpeg(file = "Thomas Genetic Drift Reference Manual Example.jpeg", width = 4, height = 3)
+par(family = "serif")
+dev.off()
+jpeg(file = "Thomas Genetic Drift Manipulated Example.jpeg", width = 4, height = 3)
+par(family = "serif")
+dev.off()
