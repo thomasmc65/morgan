@@ -61,7 +61,7 @@ invsimpson(x, inverse = TRUE)
 #1
 
 setwd("C:/GitHub/morgan")
-jpeg(file = "Thomas Genetic Drift Reference Manual Example.jpeg")
+jpeg(file = "Thomas Genetic Drift Ref Manual Example.jpeg")
 par(family = "serif")
 dev.off()
 jpeg(file = "Thomas Genetic Drift Manipulated Example.jpeg")
