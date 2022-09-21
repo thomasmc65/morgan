@@ -40,7 +40,7 @@ plot(object,show="genotypes")
           # Diversity metrics are frequently used in community ecology for reasons ranging from a quick comparison between sites to understanding community stability.
           # Their calculation can be very tedious by hand - and very fast with a package designed for the operation.
 
-install.packages("vegan")
+install.packages("vegan")#you added all kinds of fun packages here! 
 library(vegan)
 install.packages("permute")
 install.packages("lattice")
@@ -59,10 +59,10 @@ simpson.unb(x, inverse = FALSE)
 
 x <- c(12, 4, 3, 1, 2, 1)
 diversity(x, index = "invsimpson", groups = 6, equalize.groups = FALSE, MARGIN = 1, base = exp(1))
-invsimpson(x, inverse = TRUE)
+invsimpson(x, inverse = TRUE)#not a function
 #6 
 #1
-
+?diversity
 setwd("C:/GitHub/morgan")
 jpeg(file = "Thomas Genetic Drift Ref Manual Example.jpeg")
 par(family = "serif")
