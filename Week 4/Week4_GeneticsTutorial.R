@@ -165,7 +165,7 @@ plot(p, interactive=TRUE)
   # I can not stress this enough - do NOT change these lines if they don't work - change your GitHub directory setup.
 setwd("C:/GitHub/R4Eco_2022/Week4")
 data <- read.csv("Dryad_data.csv")
-
+getwd()
 # Take a look at what we are working with:
 head(data)
 # Starting with $A6F03 the rest of these columns all represent a measure of loci diversity. 

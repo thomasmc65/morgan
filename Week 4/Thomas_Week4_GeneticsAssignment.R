@@ -9,7 +9,7 @@
 
 # For your scripting assignment we will use the "ge_data" data frame found in the "stability" package.
   # Install the "stability" package, load it into your R environment, and use the data() function to load the "ge_data". (2 points)
-install.packages(stability)
+install.packages("stability")
 library(stability)
 data(ge_data)
 
@@ -17,9 +17,12 @@ data(ge_data)
   # 'Yield Response' in this dataset is a measure of phenotype expression.
   # Hint: Look at the help file for this dataset.
 
-?ge_data
-mod.env <- lm(data$__ ~ data$__..huso.30.)
-mod.gen <- lm(data$__ ~ data$__..huso.30.)
+ge_data
+head(ge_data)
+mod.env <- lm(ge_data$Yield ~ ge_data$Env)
+mod.gen <- lm(ge_data$Yield ~ ge_data$Gen)
+mod.env
+mod.gen
 
 # Test the significance of both models and look at the model summary. (3 points each)
   # Which model is a better fit to explain the yield response, and WHY? (6 points)
@@ -27,11 +30,13 @@ mod.gen <- lm(data$__ ~ data$__..huso.30.)
 
 anova(mod.env)
 summary(mod.env)
+#p-value/Pr(>F) < 2.2e-16, R-squared = 0.4315
 anova(mod.gen)
 summary(mod.gen)
+#p-value/Pr(>F) < 1.417e-11, R-squared = 0.07706
 
-#The model that is a better fit to explain the yield response is the 
+#The model that is a better fit to explain the yield response is the environment because it has a larger R-squared value. This indicates that the relationship is stronger between yield response and the environment.
 
 # Which environment would be your very WORST choice for generating a strong yield response? (2 points)
 
-#The environment that would be the worst choice for generating a strong yield response is 
+#The environment that would be the worst choice for generating a strong yield response is Sargodha because it has the largest p-value, meaning it is the least statistically significant (Pr = 0.7138).
