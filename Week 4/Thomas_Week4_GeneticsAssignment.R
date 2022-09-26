@@ -10,21 +10,28 @@
 # For your scripting assignment we will use the "ge_data" data frame found in the "stability" package.
   # Install the "stability" package, load it into your R environment, and use the data() function to load the "ge_data". (2 points)
 install.packages(stability)
+library(stability)
 data(ge_data)
 
 # Create two linear models for Yield Response: one related to the Environment and one to the Genotype. (2 points each)
   # 'Yield Response' in this dataset is a measure of phenotype expression.
   # Hint: Look at the help file for this dataset.
 
-
+?ge_data
+mod.env <- lm(data$__ ~ data$__..huso.30.)
+mod.gen <- lm(data$__ ~ data$__..huso.30.)
 
 # Test the significance of both models and look at the model summary. (3 points each)
   # Which model is a better fit to explain the yield response, and WHY? (6 points)
-
-#
-
   # Hint: Does one model seem more likely to be over-fitted?
+
+anova(mod.env)
+summary(mod.env)
+anova(mod.gen)
+summary(mod.gen)
+
+#The model that is a better fit to explain the yield response is the 
 
 # Which environment would be your very WORST choice for generating a strong yield response? (2 points)
 
-#
+#The environment that would be the worst choice for generating a strong yield response is 
