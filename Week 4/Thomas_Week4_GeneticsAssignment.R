@@ -5,7 +5,7 @@
 
   # Part 2: Despite the drawbacks, give the result or interpretation that you feel most confident in (3 points), and EXPLAIN WHY (4 points).
 
-#The grey points are likely the most correlated as they are clustered closest together and have the fewest outliers compared to the data points of other regions.
+#The grey points are likely the most correlated as they are clustered closest together and have the fewest outliers compared to the data points of different regions.
 
 # For your scripting assignment we will use the "ge_data" data frame found in the "stability" package.
   # Install the "stability" package, load it into your R environment, and use the data() function to load the "ge_data". (2 points)
