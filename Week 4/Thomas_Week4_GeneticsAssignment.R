@@ -1,9 +1,11 @@
 # Look at the plot and model results for our Dryad data in the tutorial. Part 1: Without knowing which points represent which groups, 
   # Give one explanation for why these data might be difficult to draw spatial inferences about genes.(3 points)
 
-#These data might be difficult to use to draw spatial inferences about genes because many of them are clustered together on the plot. This makes it difficult to understand relationships between the different regions.
+#These data might be difficult to use to draw spatial inferences about genes because many of them are clustered together on the plot. This makes it difficult to understand relationships between the different regions
+#You cannot see the topography of the land and there is not enough data for the number of genes (context missing).
 #On the right track - the biggest issue is that they are clustered unevenly (aka an unbalanced sample - I will explain this version later in the semester).
-  # Part 2: Despite the drawbacks, give the result or interpretation that you feel most confident in (3 points), and EXPLAIN WHY (4 points).
+ 
+ # Part 2: Despite the drawbacks, give the result or interpretation that you feel most confident in (3 points), and EXPLAIN WHY (4 points).
 
 #The grey points are likely the most correlated as they are clustered closest together and have the fewest outliers compared to the data points of different regions.
 
@@ -37,6 +39,7 @@ summary(mod.gen)
 
 #The model that is a better fit to explain the yield response is the environment because it has a larger R-squared value. This indicates that the relationship is stronger between yield response and the environment.
 #The other model is also over-fitted.
+
 # Which environment would be your very WORST choice for generating a strong yield response? (2 points)
 
 #The environment that would be the worst choice for generating a strong yield response is Sargodha because it has the largest p-value, meaning it is the least statistically significant out of all the environments (p = 0.7138).
