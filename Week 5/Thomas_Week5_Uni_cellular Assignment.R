@@ -22,6 +22,9 @@
 
 data <- read.csv(file=("C:/GitHub/morgan/Week 5/Figure4Data.csv"), header=T)
 
+library(fitdistrplus)
+library(logspline)
+
 #(1) Poisson
 one.col <- data$Num.Cells.Progeny
 hist(one.col, main = "Number of Cells in Progeny")
@@ -59,6 +62,9 @@ one.col <- data$RepTime.sec
 hist(one.col, main = "Replication Time")
 fit.logis <- fitdist(c(na.exclude(one.col)), distr = "logis")
 fit.logis
+
+#fits = lapply(fitp, fitnb, fit.logis, function(i){fitdist(prob, distr = i, method = "mle")})
+#gofstat(fits, chisqbreaks=c(1,2,4,8,16,32,64))
 
 gofstat(list(fitp, fitnb, fit.logis), chisqbreaks=c(1,2,4,8,16,32,64))
 
