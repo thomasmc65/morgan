@@ -27,23 +27,23 @@ library(logspline)
 
 #(1) Poisson
 one.col <- data$Num.Cells.Progeny
-hist(one.col, main = "Number of Cells in Progeny")
+hist(one.col, main = "Number of Cells of Progeny")
 fitp <- fitdist(c(na.exclude(one.col)), distr = "pois")
 fitp
 
 #(1) Negative Binomial
 one.col <- data$Num.Cells.Progeny
-hist(one.col, main = "Number of Cells in Progeny")
+hist(one.col, main = "Number of Cells of Progeny")
 fitnb <- fitdist(c(na.exclude(one.col)), distr = "nbinom")
 fitnb
 
 #(1) Logistic
 one.col <- data$Num.Cells.Progeny
-hist(one.col, main = "Number of Cells in Progeny")
+hist(one.col, main = "Number of Cells of Progeny")
 fit.logis <- fitdist(c(na.exclude(one.col)), distr = "logis")
 fit.logis
 
-gofstat(list(fitp, fitnb, fit.logis))
+gofstat(list(fitp, fitnb, fit.logis), chisqbreaks=c(1,2,4,8,16,32,64))
 
 #(2) Poisson
 one.col <- data$RepTime.sec
@@ -63,37 +63,24 @@ hist(one.col, main = "Replication Time")
 fit.logis <- fitdist(c(na.exclude(one.col)), distr = "logis")
 fit.logis
 
-#fits = lapply(fitp, fitnb, fit.logis, function(i){fitdist(prob, distr = i, method = "mle")})
-#gofstat(fits, chisqbreaks=c(1,2,4,8,16,32,64))
-
 gofstat(list(fitp, fitnb, fit.logis), chisqbreaks=c(1,2,4,8,16,32,64))
 
 # Based on the AIC scores, which distribution is the best fit for: (4 pts)
   # (1) - The number of cells of progeny (data$Num.Cells.Progeny)?
   # (2) - The replication time (data$RepTime.sec)?
 
-#(1) The distribution that is the best fit for the number of cells in the progeny is the ...
-#(2) The distribution that is the best fit for the replication time is the ...
+#(1) The distribution that is the best fit for the number of cells in the progeny is the negative binomial as it has the lowest AIC value.
+#(2) The distribution that is the best fit for the replication time is also the negative binomial, which has the lowest AIC value.
 
 # Plot a generic histogram for the replication time (data$RepTime.sec) (2 pt)
 
 one.col <- data$RepTime.sec
-hist(one.col, main = "Time")
-fit.norm <- fitdist(one.col*100, distr = "norm")
-plot(fit.norm)
+hist(one.col, main = "Replication Time")
 
 # Based on the patterns of this histograms and Figure 4:
   #Give one hypothesis for an evolutionary process represented by the two tallest bars in your histogram. (6 pts)
   # Don't cheat by looking at the paper! 
     # This hypothesis does not need to be correct - it only needs to be ecologically rational based these two figures.
 
-#One hypothesis for an evolutionary process represented by the two tallest bars in the histogram is that ...
-
-
-
-
-
-
-
-
-
+#One hypothesis for an evolutionary process represented by the two tallest bars in the histogram is that predation played a role in the development of multicellularity.
+#With increased stress from predators, replication time decreased, which would have increased the number of cells of progeny.
