@@ -6,7 +6,7 @@
 
 # Do all of the strains in the plot have the same distributions (yes/no)? (2 pt) 
 
-#No they do not.
+#All the strains in the plot do not have the same distributions.
 
 # Based on these observations of your strain distributions, why did the authors use a Kruskal-Wallis test rather than ANOVA to compare the strains? (2 pts)
 
