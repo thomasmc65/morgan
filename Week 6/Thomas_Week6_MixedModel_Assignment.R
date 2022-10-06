@@ -23,7 +23,7 @@ summary(gam.mod1)
 r.squaredGAM(gam.mod1)
 
 #Interactive Effect
-gam.mod2 <- gam( ..FID.~Object * Area, family = binomial, random = list(ID=~ 1), data = df)
+gam.mod2 <- gam(activity.level~claw.width * carapace.width * toadfish.cue.treatment, family = binomial, random = list(ID=~ 1), data = df)
 summary(gam.mod2)
 r.squaredGAM(gam.mod2)
 
