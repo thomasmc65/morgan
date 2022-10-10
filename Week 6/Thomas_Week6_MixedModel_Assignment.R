@@ -26,6 +26,7 @@ summary(glmm.mod2)
 # The authors used proportional consumption of prey as the (y) in their model, but did not include this in the dataset.
   # So we are going to create it - run the following line, assuming df= your data frame (feel free to change that):
 df$prop.cons <- df$eaten/df$prey
+df$prop.cons
 
 # (Q1) - The code in line 8 is performing two operations at once. What are they? (2 pts)
 #The two operations the code in line 8 is performing are 
