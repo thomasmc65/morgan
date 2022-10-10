@@ -84,3 +84,5 @@ hist(one.col, main = "Replication Time")
 
 #One hypothesis for an evolutionary process represented by the two tallest bars in the histogram is that predation played a role in the development of multicellularity.
 #With increased stress from predators, replication time decreased, which would have increased the number of cells of progeny.
+
+#Excellent hypothesis! We will explore predator-prey on a shorter timescale soon in class.
