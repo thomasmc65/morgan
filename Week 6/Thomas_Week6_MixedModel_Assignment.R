@@ -29,7 +29,7 @@ df$prop.cons <- df$eaten/df$prey
 df$prop.cons
 
 # (Q1) - The code in line 8 is performing two operations at once. What are they? (2 pts)
-#The two operations the code in line 8 is performing are 
+#The two operations the code in line 8 is performing are adding column headings and assigning values to the variables.
 
 # (Q2) - Did the interactive effect change which variables predict proportional consumption? How, specifically, did the results change? (5 pts)
 #The interactive effect did not change which variables predict proportional consumption. For both of the additive and interactive effect models, toadfish cue treatments had the lowest p-value.
