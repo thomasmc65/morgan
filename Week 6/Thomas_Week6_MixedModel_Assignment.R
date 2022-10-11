@@ -32,7 +32,7 @@ df$prop.cons
 #The two operations the code in line 8 is performing are adding column headings and assigning values to the variables.
 
 # (Q2) - Did the interactive effect change which variables predict proportional consumption? How, specifically, did the results change? (5 pts)
-#The interactive effect did not change which variables predict proportional consumption. For both of the additive and interactive effect models, toadfish cue treatments had the lowest p-value.
+#The interactive effect did not change which variables predict proportional consumption. For both of the additive and interactive effect models, toadfish cue treatments had the lowest p-value of all the variables.
 
 # (Q3) - Plot the residuals of both models. Do you think either model is a good fit? Why or why not? (3 pts)
 plot(glmm.mod1$residuals, ylim = c(-.1,.1))
