@@ -28,11 +28,13 @@ summary(glmm.mod2)
 df$prop.cons <- df$eaten/df$prey
 df$prop.cons
 
-# (Q1) - The code in line 8 is performing two operations at once. What are they? (2 pts)
-#The two operations the code in line 8 is performing are adding column headings and assigning values to the variables.
+# (Q1) - The code in line 13 is performing two operations at once. What are they? (2 pts)
+#The two operations the code in line 13 is performing are adding the data for the proportional consumption of prey into the dataframe as it was not originally in it.
+#It is creating the consumption of prey as the y to compare to the predictor variables.
 
 # (Q2) - Did the interactive effect change which variables predict proportional consumption? How, specifically, did the results change? (5 pts)
 #The interactive effect did not change which variables predict proportional consumption. For both of the additive and interactive effect models, toadfish cue treatments had the lowest p-value of all the different variables.
+#This indicates that the chosen variables have no effect on each other, so no variable will clearly be able to predict proportional consumption. If three different predictor variables were chosen, a difference in results would be more obvious.
 
 # (Q3) - Plot the residuals of both models. Do you think either model is a good fit? Why or why not? (3 pts)
 plot(glmm.mod1$residuals, ylim = c(-.1,.1))
