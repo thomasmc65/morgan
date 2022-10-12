@@ -28,7 +28,7 @@ summary(glmm.mod2)
 df$prop.cons <- df$eaten/df$prey
 df$prop.cons
 
-# (Q1) - The code in line 13 is performing two operations at once. What are they? (2 pts)
+# (Q1) - The code in line 13 is performing two operations at once. What are they? (2 pts) #Thanks for fixing my line number...
 #The two operations the code in line 13 is performing are adding the data for the proportional consumption of prey into the dataframe as it was not originally in it.
 #It is creating the consumption of prey as the y to compare to the predictor variables.
 
@@ -40,7 +40,7 @@ df$prop.cons
 plot(glmm.mod1$residuals, ylim = c(-.1,.1))
 plot(glmm.mod2$residuals, ylim = c(-.1,.1))
 #Neither model is a good fit because there is too obvious of a pattern in each residual plot. The data is not random enough.
-
+#Very true - in this case removing the ylim would make it even more obvious.
 # Re-run both models as generalized additive models instead (using gam). Then compare the AIC of both models. (4 points each)
 
 #Additive Effects
@@ -61,7 +61,7 @@ AIC(gam.mod1, gam.mod2)
 # (Q4) - Which model is a better fit? (2 pt)
 #Among the two generalized additive models, it is unclear as to whether the additive or interactive model is a better fit.
 #This is because the neither of the models has both the higher R-squared and the lower AIC.
-#But, because the R-squared values are so close between the two, the additive model likely is a better fit as its AIC is lower.
+#But, because the R-squared values are so close between the two, the additive model likely is a better fit as its AIC is lower. #Yep!
 
 # (Q5) - Based on the residuals of your generalized additive models, how confident are you in these results? (2 pts)
 plot(gam.mod1$residuals, ylim = c(-.1,.1))
