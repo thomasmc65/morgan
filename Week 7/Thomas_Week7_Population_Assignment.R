@@ -46,13 +46,13 @@ LotVmod <- function (Time, State, Pars) {
   })
 }
 
-Pars <- c(alpha = 2, beta = 0.7, gamma = .2, delta = .6) #This is the line we will change
+Pars <- c(alpha = 1, beta = 0.9, gamma = .3, delta = .6) #This is the line we will change
 State <- c(x = 10, y = 10)#For now keep this the same.
 Time <- seq(0, 100, by = 1)#For now keep this the same.
 out <- as.data.frame(ode(func = LotVmod, y = State, parms = Pars, times = Time))
 
 matplot(out[,-1], type = "l", xlab = "Numeric Date", ylab = "Density Individuals")
-legend("bottomleft", c("D. mendotae", "Limnocalanus"), lty = c(1,2), col = c(1,2), box.lwd = 0)
+legend("topright", c("D. mendotae", "Limnocalanus"), lty = c(1,2), col = c(1,2), box.lwd = 0)
 
 library(deSolve)
 
