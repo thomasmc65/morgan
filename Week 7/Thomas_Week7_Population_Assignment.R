@@ -46,9 +46,9 @@ LotVmod <- function (Time, State, Pars) {
   })
 }
 
-Pars <- c(alpha = 1, beta = 0.9, gamma = .3, delta = .6) #This is the line we will change
-State <- c(x = 10, y = 10)#For now keep this the same.
-Time <- seq(0, 100, by = 1)#For now keep this the same.
+Pars <- c(alpha = .5, beta = 1, gamma = .4, delta = .3)
+State <- c(x = 10, y = 10)
+Time <- seq(0, 100, by = 1)
 out <- as.data.frame(ode(func = LotVmod, y = State, parms = Pars, times = Time))
 
 matplot(out[,-1], type = "l", xlab = "Numeric Date", ylab = "Density Individuals")
@@ -65,13 +65,13 @@ library(deSolve)
 # (3) - By only changing values for alpha, beta, gamma, and/or delta
 # change the default parameters of the L-V model to best approximate the relationship between Limncalanus and D.mendotae, assuming both plots are on the same time scale.
 # What are the changes you've made to alpha, beta, gamma, and delta from the default values; and what do they say in a relative sense about the plankton data? (4 pts)
-
+#Beta was increased to represent a rise in the rate of predation on Limnocalanus by D. mendotae.
+#Alpha was decreased to represent a decrease in Limnocalanus population growth and a slow in population fluctuations.
+#Gamma was increased to represent that the increase of Limnocalanus consumption helped to stabilize the population.
+#Delta was decreased to represent that the rate of Limnocalanus consumption as die-off of D. mendotae was not happening.
 
 # Are there other parameter changes that could have created the same end result? (2 pts)
+#Other parameter changes that could have created the same end result include the introduction of a new predator species and competition between that species and D. mendotae.
 
 # Export your final L-V plot with a legend that includes the appropriate genus and/or species name as if the model results were the real plankton data, 
 # and upload with your script. (hint - remember which one is the predator and which is the prey)
-
-
-
-
