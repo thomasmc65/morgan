@@ -33,6 +33,7 @@ ggplot(data)  +
 #The species most likely to be r-selected prey is Limnocalanus and the primary predator is D. mendotae. 
 #This is because the population spikes in Limnocalanus happen first and are then followed by a spike in the predator species, D. mendotae.
 #This indicates that D. mendotae relies on Limnocalanus as a food source because when Limnocalanus declines, so does D. mendotae.
+#Backward (probably) because those peaks are actually a response to the previous peak - magnitude matters just as much as timing in this case.
 
 # What is one relationship the third species MIGHT have to the first two? (2 pts)
 #The third species (Bythotrephes) might be the prey of the primary predator's prey species (Limnocalanus).
@@ -53,7 +54,7 @@ out <- as.data.frame(ode(func = LotVmod, y = State, parms = Pars, times = Time))
 
 matplot(out[,-1], type = "l", xlab = "Numeric Date", ylab = "Density Individuals")
 legend("topright", c("D. mendotae", "Limnocalanus"), lty = c(1,2), col = c(1,2), box.lwd = 0)
-
+#They die off every time I run this model. Did you get the plot you exported from these values?
 library(deSolve)
 
 # (2) - What do alpha, beta, gamma, and delta represent in this function? (4 pts)
@@ -72,6 +73,7 @@ library(deSolve)
 
 # Are there other parameter changes that could have created the same end result? (2 pts)
 #Other parameter changes that could have created the same end result include the introduction of a new predator species and competition between that species and D. mendotae.
+#True, but the question was about the coeffecient changes.
 
 # Export your final L-V plot with a legend that includes the appropriate genus and/or species name as if the model results were the real plankton data, 
 # and upload with your script. (hint - remember which one is the predator and which is the prey)
