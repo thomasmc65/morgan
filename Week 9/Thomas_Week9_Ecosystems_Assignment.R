@@ -32,9 +32,11 @@ invert.means <- aggregate(x = invert, by = list(invert$names), FUN = "mean")
 head(invert.means)
 
 abiotic.means1 <- abiotic.means[,c(-2,-3,-5,-6,-16)]
-abiotic.means1 <- sapply(abiotic.means1, as.numeric)
+abiotic.means2 <- sapply(abiotic.means1, as.numeric)
 invert.means1 <- invert.means[,-2:-3]
-invert.means1 <- sapply(invert.means1, as.numeric)
+invert.means2 <- sapply(invert.means1, as.numeric)
+
+#Change numbers below for abiotic.means and invert.means
 
 library(vegan)
 colnames(abiotic.means1)
@@ -42,13 +44,33 @@ ord <- rda(invert.means1 ~ pH + totalN + Perc_ash + Kalium + Magnesium + Ca + Al
 ord
 
 ord <- rda(invert.means1 ~., abiotic.means1)
+anova(ord)
 
+#___% if the variance is explained by this redundancy analysis.
 
 # (Q2 - 12 pts) Then use the dataset from the tutorial to create a linear model related to your RDA. Try multiple predictors to find the best fit model.
   # Explain the ecological importance of the significant predictors, or lack of significant predictors.
 
+mod1 <- lm(invert.means1 ~ pH + totalN + Perc_ash + Kalium + Magnesium + Ca + Al + TotalP + OlsenP, abiotic.means1)
+summary(mod1)
+anova(mod1)
+AIC(mod1)
+summary(mod1)$adj.r.squared
 
+mod2 <- lm(invert.means1 ~ ________________ , abiotic.means1)
+summary(mod2)
+anova(mod2)
+AIC(mod1,mod2)
+
+plot(mod2$residuals)
+summary(mod2)$adj.r.squared
+mod3 <- lm(invert.means1 ~ ________________ , abiotic.means1)
+summary(mod3)
+anova(mod3)
+AIC(mod2, mod3)
+plot(mod3$residuals)
+summary(mod3)$adj.r.squared
 
 # (Q3 - 6 pts) Provide a 3-4 sentence synthesis of how these results relate to one another and the value of considering both together for interpreting biotic-abiotic interactions.
 
-
+#These results relate to one another in that 
