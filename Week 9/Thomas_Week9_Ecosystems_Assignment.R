@@ -31,45 +31,45 @@ head(abiotic.means)
 invert.means <- aggregate(x = invert, by = list(invert$names), FUN = "mean")
 head(invert.means)
 
-abiotic.means1 <- abiotic.means[,c(-2,-3,-5,-6,-16)]
-abiotic.means2 <- sapply(abiotic.means1, as.numeric)
-invert.means1 <- invert.means[,-2:-3]
-invert.means2 <- sapply(invert.means1, as.numeric)
-
-#Change numbers below for abiotic.means and invert.means
+abiotic.means1 <- abiotic.means[,c(-1,-2,-3,-5,-6,-16)]
+abiotic.means2 <- as.data.frame(sapply(abiotic.means1, as.numeric))
+invert.means1 <- invert.means[-5,c(-1:-3,-73)]
+invert.means2 <- as.data.frame(sapply(invert.means1, as.numeric))
 
 library(vegan)
-colnames(abiotic.means1)
-ord <- rda(invert.means1 ~ pH + totalN + Perc_ash + Kalium + Magnesium + Ca + Al + TotalP + OlsenP, abiotic.means1)
+colnames(abiotic.means2)
+ord <- rda(invert.means2 ~ pH + totalN + Perc_ash + Kalium + Magnesium + Ca + Al + TotalP + OlsenP, abiotic.means2)
 ord
-
-ord <- rda(invert.means1 ~., abiotic.means1)
 anova(ord)
+plot(ord, ylim = c(-2,2), xlim = c(-5,5))  
+ord <- rda(invert.means2 ~., abiotic.means2)
 
-#___% if the variance is explained by this redundancy analysis.
+#53% of the variance is explained by this redundancy analysis.
 
 # (Q2 - 12 pts) Then use the dataset from the tutorial to create a linear model related to your RDA. Try multiple predictors to find the best fit model.
   # Explain the ecological importance of the significant predictors, or lack of significant predictors.
 
-mod1 <- lm(invert.means1 ~ pH + totalN + Perc_ash + Kalium + Magnesium + Ca + Al + TotalP + OlsenP, abiotic.means1)
+mod1 <- lm(invert.means2$Diptera ~ pH + totalN + Perc_ash + Kalium + Magnesium + Ca + Al + TotalP + OlsenP, abiotic.means2)
 summary(mod1)
-anova(mod1)
-AIC(mod1)
-summary(mod1)$adj.r.squared
+AIC(mod1) #113.9488
+summary(mod1)$adj.r.squared #0.228516
+#Remove pH, K, and Mg.
 
-mod2 <- lm(invert.means1 ~ ________________ , abiotic.means1)
+mod2 <- lm(invert.means2$Diptera ~ totalN + Perc_ash + Ca + Al + TotalP + OlsenP, abiotic.means2)
 summary(mod2)
-anova(mod2)
-AIC(mod1,mod2)
+AIC(mod2) #110.1255
+summary(mod2)$adj.r.squared #0.3511541
+#Remove Al and TotalP.
 
-plot(mod2$residuals)
-summary(mod2)$adj.r.squared
-mod3 <- lm(invert.means1 ~ ________________ , abiotic.means1)
+mod3 <- lm(invert.means2$Diptera ~ totalN*OlsenP + Perc_ash + Ca + Al + TotalP, abiotic.means2)
 summary(mod3)
-anova(mod3)
-AIC(mod2, mod3)
+AIC(mod3) #91.83614
+summary(mod3)$adj.r.squared #0.7566873
+
 plot(mod3$residuals)
-summary(mod3)$adj.r.squared
+
+#From model 3, the interactive effect between total nitrogen and reactive phosphorous combined with the percentage of ash rest, calcium, aluminum, and total phosphorous a lower AIC when compared to the other two tested linear models.
+#These results make sense as nitrogen and phosphorous are limiting nutrients in an ecosystem.
 
 # (Q3 - 6 pts) Provide a 3-4 sentence synthesis of how these results relate to one another and the value of considering both together for interpreting biotic-abiotic interactions.
 
