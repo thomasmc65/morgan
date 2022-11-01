@@ -42,8 +42,8 @@ anova(ord)
 plot(ord, ylim = c(-2,2), xlim = c(-5,5))  
 ord <- rda(invert.means2 ~., abiotic.means2)
 
-#For the invertebrate community, the predictor variables used to complete the RDA with variance partitioning included pH, total nitrogen, percentage of ash rest, potassium, magnesium, calcium, aluminum, total phosphorous, and reactive phosphorous.
-#The variables most important for the invertebrate community were those related to soil conditions such as pH and nutrient abundance as these impact plant quality and thus the presence of invertebrates.
+#For the invertebrate community Diptera, the predictor variables used to complete the RDA with variance partitioning included pH, total nitrogen, percentage of ash rest, potassium, magnesium, calcium, aluminum, total phosphorous, and reactive phosphorous.
+#The variables most important for Diptera were those related to soil conditions such as pH and nutrient abundance as these impact plant quality and thus the presence of these invertebrates.
 #53% of the variance is explained by this redundancy analysis.
 #The significance of each of these predictor variables were further analyzed through the use of linear models below to find the best fit model.
 
@@ -76,5 +76,5 @@ plot(mod3$residuals)
 
 # (Q3 - 6 pts) Provide a 3-4 sentence synthesis of how these results relate to one another and the value of considering both together for interpreting biotic-abiotic interactions.
 
-#These results relate to one another in that nitrogen and phosphorous are often limiting nutrients in ecosystems, meaning that the growth and reproduction of the invertebrate community is controlled by the availability and concentration of nitrogen and phosphorous.
+#These results relate to one another in that nitrogen and phosphorous are often limiting nutrients in ecosystems, meaning that the growth and reproduction of the Diptera invertebrate community is controlled by the availability and concentration of nitrogen and phosphorous.
 #This is a good example of how the abiotic and biotic components of an ecosystem interact and influence communities within that ecosystem. Analyzing the interactions of biotic and abiotic factors can therefore help with understanding ecosystems as a whole.
