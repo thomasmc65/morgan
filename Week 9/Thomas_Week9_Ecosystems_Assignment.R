@@ -45,6 +45,8 @@ ord <- rda(invert.means2 ~., abiotic.means2)
 #For the invertebrate community Diptera, the predictor variables used to complete the RDA with variance partitioning included pH, total nitrogen, percentage of ash rest, potassium, magnesium, calcium, aluminum, total phosphorous, and reactive phosphorous.
 #The variables most important for Diptera were those related to soil conditions such as pH and nutrient abundance as these impact plant quality and thus the presence of these invertebrates.
 #53% of the variance is explained by this redundancy analysis.
+#Your interpretation here is great - just don't forget that the model wasn't significant :( 
+#So this explanation is a bit of a mountain from a mole hill - if the model was significant then it would be perfect.
 #The significance of each of these predictor variables were further analyzed through the use of linear models below to find the best fit model.
 
 # (Q2 - 12 pts) Then use the dataset from the tutorial to create a linear model related to your RDA. Try multiple predictors to find the best fit model.
@@ -68,6 +70,9 @@ AIC(mod3) #91.83614
 summary(mod3)$adj.r.squared #0.7566873
 
 plot(mod3$residuals)
+#I'm not sure what is going on, but when I run your models I get completely different R squared and AIC values. I don't know why and I will trust your numbers/interpretation.
+#Before your final project let's look at this together to make sure it's not an issue with versions of packages or R, or something else.
+
 
 #From model 3, the interactive effect between total nitrogen and reactive phosphorous combined with the percentage of ash rest, calcium, aluminum, and total phosphorous had a lower AIC when compared to the other two tested linear models.
 #Model 1 was the global model that tested all predictor variables without any interactive effects. The least significant ones were removed in model 2. 
@@ -77,4 +82,5 @@ plot(mod3$residuals)
 # (Q3 - 6 pts) Provide a 3-4 sentence synthesis of how these results relate to one another and the value of considering both together for interpreting biotic-abiotic interactions.
 
 #These results relate to one another in that nitrogen and phosphorous are often limiting nutrients in ecosystems, meaning that the growth and reproduction of the Diptera invertebrate community is controlled by the availability and concentration of nitrogen and phosphorous.
-#This is a good example of how the abiotic and biotic components of an ecosystem interact and influence communities within that ecosystem. Analyzing the interactions of biotic and abiotic factors can therefore help with understanding ecosystems as a whole.
+#This is a good example of how the abiotic and biotic components of an ecosystem interact and influence communities within that ecosystem. Analyzing the interactions of biotic and abiotic factors can therefore help with understanding ecosystems as a whole.\
+#How does this relate back to the ordination results? Otherwise great!
