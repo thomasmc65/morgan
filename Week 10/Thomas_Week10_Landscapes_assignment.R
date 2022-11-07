@@ -1,6 +1,7 @@
 # Load the packages from this week's tutorial.
 #In the tutorial we looked at the community as a whole and the swimmers which ultimately matched a prediction we had for their distribution.
 
+setwd("C:/GitHub/morgan/Week 10")
 library(spdep)
 library(adespatial)
 library(vegan)
@@ -10,6 +11,16 @@ library(vegan)
     #Ephememeroptera are 3rd, and non insects are 4th...because they don't have wings.
 #Groupings by habits include the swimmers (off limits for the assignment) as most mobile, sprawlers as 2nd (they move in search of food, but not quickly),
     #and the clingers come in last (they might move up and down on individual rocks).
+
+PatchLatLon.csv <- read.csv("PatchLatLon.csv", header=T)
+BugsByPatch.csv <- read.csv("BugsByPatch.csv", header=T)
+HabitatbyPatch.csv <- read.csv("HabitatbyPatch.csv", header=T)
+Swimmers.csv <- read.csv("Swimmers.csv", header=T)
+
+PatchLatLon.mat <- as.matrix(PatchLatLon.csv[,-1])
+BugsByPatch.mat <- as.matrix(BugsByPatch.csv)
+HabitatbyPatch.mat <- as.matrix(HabitatbyPatch.csv)
+Swimmers.mat <- as.matrix(Swimmers.csv)
 
 
 
