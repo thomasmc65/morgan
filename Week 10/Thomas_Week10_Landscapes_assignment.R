@@ -90,6 +90,7 @@ RsquareAdj(HabNoSpace.rda)
 #Space controlling habitat is more influential for Diptera than habitat controlling space. About 4% was explained by habitat and 43% by space, this leaves about 36% for space in union with habitat.
 #The same was true for the clingers, with space controlling habitat bring more influential than habitat controlling space. About 4% was explained by habitat and nearly 50% by space, leaveing about 21% for space in union with habitat.
 #In comparison, the two communities (Diptera and the clingers) had pretty similar patterns.
+  #True - if you squint and think about them relative to one another the pattern of more space for Clingers also makes sense.
 
 #Part 3: For each of your chosen groups of bugs, perform variable selection for the habitat data rather than the AEM data. Which habitat variables are significant for each? (10 points)
   # Definitions for the habitat column names:
@@ -125,3 +126,5 @@ aem.fwd
 #Selecting both the spatial and the habitat variables would provide more insight as to why space has more of an effect than habitat for the two communities as indicated by the most significant variables.
 #Since space was clearly more significant, we likely would not see a large increase in habitat, at least not for the clingers but maybe for Diptera considering the difference in the number of significant variables between the two communities.
 #Diptera's habitat may become significant along with its space, but it will not be as significant as space.
+#All of this might be true - the real change is that you are likely overfitting the habitat right now without first selecting the meaningful variables.
+#So you might "steal" from the conditional variance to increase habitat, likely the total unconstrainted variance will go up though.
