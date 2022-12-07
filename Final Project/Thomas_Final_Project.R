@@ -55,7 +55,8 @@ summary(rainfall.rda)
 #This leaves about 91.1% of unexplained variance in arthropod abundance.
 plot.window(xlim = c(-100,100), ylim = c(-50,350), asp = 1)
 plot(soiltemp.rda)
-plot.cca(soiltemp.rda, xlim = c(-100,100), ylim = c(-50,350))
+plot(soiltemp.rda, ylim = c(1,2),display = c("sites", "species"))
 plot(rainfall.rda)
-plot(rainfall.rda, xlim = c(-75,100), ylim = c(-50,400))
+plot(rainfall.rda, ylim = c(1,2))
 ?plot.cca
+?text
