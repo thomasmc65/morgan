@@ -16,6 +16,8 @@ head(arthrain)
 
 df <- merge(soiltemp, arthrain, by = "period")
 df
+df$roundmaxtemp <- format(round(df$avgmaxtemp, 0), nsmall = 0)
+df$roundmintemp <- format(round(df$avgmintemp, 0), nsmall = 0)
 
 library(spdep)
 library(adespatial)
@@ -37,7 +39,7 @@ summary(soiltemp.rda)
 #RsquaredAdj = 0.2741938
 #p = 0.001
 
-#About 29.2% of the variance in arthropod abundance is explained by soil temperature.
+#About 29.2% of the variance in arthropod abundance is explained by soil temperature. Because this is greater than the variance explained by rainfall levels, it has a more significant impact on arthropod abundance.
 #This leaves about 70.8% of unexplained variance in arthropod abundance.
 
 #Rainfall Controlling Arthropods
@@ -53,10 +55,15 @@ summary(rainfall.rda)
 
 #About 8.95% of the variance in arthropod abundance is explained by rainfall level.
 #This leaves about 91.1% of unexplained variance in arthropod abundance.
-plot.window(xlim = c(-100,100), ylim = c(-50,350), asp = 1)
+
 plot(soiltemp.rda)
-plot(soiltemp.rda, ylim = c(1,2),display = c("sites", "species"))
+plot(soiltemp.rda, type = "n", ylim = c(1,2), display = c("sites", "species"))
+text(soiltemp.rda, display = "sites", labels = as.numeric(df$roundmintemp, df$roundmaxtemp), col = "blue3", cex = 0.65)
+text(soiltemp.rda, display = "species", labels = as.character(colnames(df[,9:89])), col = "darkmagenta", cex = 0.65)
+
 plot(rainfall.rda)
-plot(rainfall.rda, ylim = c(1,2))
-?plot.cca
-?text
+plot(rainfall.rda, type = "n", ylim = c(1,2), display = c("sites", "species"))
+text(rainfall.rda, display = "sites", labels = as.character(df$trt), col = "blue3", cex = 0.65)
+text(rainfall.rda, display = "species", labels = as.character(colnames(df[,9:89])), col = "darkmagenta", cex = 0.65)
+
+#Arrows? Axes? How to interpret the rda plots
