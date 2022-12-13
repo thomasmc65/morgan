@@ -3,7 +3,6 @@ setwd("C:/GitHub/morgan/Final Project")
 #arthrain = arthropod and rainfall data (Wise_DH_Lensing_JR_2019)
 #soiltemp = soil minimum and maximum temperature data (KY_Soil_Data)
 
-install.packages("readxl")
 library(readxl)
 
 #Reading in the soil temperature excel dataset and making it into a data frame.
@@ -119,6 +118,6 @@ hist(df$Kacarina) #Normal distribution?
 #Most to least significant (p-values): avgmintemp (< 2e-16), avgmaxtemp:avgmintemp (3.39e-12), avgmaxtemp (0.00364), trtl (0.00111)
 
 #Creating a linear model for Acarina as this was the species found to be most significantly impacted by soil temperature.
-plot(Kacarina~avgmaxtemp, data = df, main = "Acarina (Kempson Sample)", xlab = "Average Maximum Soil Temperature (Degrees F)", ylab = "Acarina")
-plot(Kacarina~avgmintemp, data = df, main = "Acarina (Kempson Sample)", xlab = "Average Minimum Soil Temperature (Degrees F)", ylab = "Acarina")
+plot(Kacarina~avgmaxtemp, data = df, main = "Acarina (Kempson Sample)", xlab = "Average Maximum Soil Temperature (Degrees F)", ylab = "Density of Individuals")
+plot(Kacarina~avgmintemp, data = df, main = "Acarina (Kempson Sample)", xlab = "Average Minimum Soil Temperature (Degrees F)", ylab = "Density of Individuals")
 #What is the y axis showing/what are its units?
