@@ -117,7 +117,6 @@ hist(df$Kacarina) #Normal distribution?
 #Deviance Explained = 70.6%
 #Most to least significant (p-values): avgmintemp (< 2e-16), avgmaxtemp:avgmintemp (3.39e-12), avgmaxtemp (0.00364), trtl (0.00111)
 
-#Creating a linear model for Acarina as this was the species found to be most significantly impacted by soil temperature.
+#Creating a linear model for Acarina and soil temperature as this was the taxon found to be most significantly impacted by soil temperature. The RDAs indicated soil temperature had a greater impact compared to rainfall level.
 plot(Kacarina~avgmaxtemp, data = df, main = "Acarina (Kempson Sample)", xlab = "Average Maximum Soil Temperature (Degrees F)", ylab = "Density of Individuals")
 plot(Kacarina~avgmintemp, data = df, main = "Acarina (Kempson Sample)", xlab = "Average Minimum Soil Temperature (Degrees F)", ylab = "Density of Individuals")
-#What is the y axis showing/what are its units?
