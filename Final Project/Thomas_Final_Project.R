@@ -81,7 +81,7 @@ library(MASS)
 library(MuMIn)
 library(mgcv)
 
-#Khypo - Hypogastruridae (Spider) Kempson Sample
+#Khypo - Hypogastruridae (Spiders) Kempson Sample
 
 glm.Khypo <- glm(Khypo~trt + avgmaxtemp + avgmintemp, family = gaussian, data = df)
 summary(glm.Khypo)
@@ -99,7 +99,7 @@ hist(df$Khypo, breaks = 50)
 #Deviance Explained = 69%
 #All variables have same p-values
 
-#Kacarina - Acarina (Mite) Kempson Sample
+#Kacarina - Acarina (Mites) Kempson Sample
 
 glm.Kacarina <- glm(Khypo~trt + avgmaxtemp + avgmintemp, family = poisson, data = df)
 summary(glm.Kacarina)
@@ -111,7 +111,7 @@ gam.Kacarina <- gam(Kacarina~trt + avgmaxtemp * avgmintemp, family = gaussian, d
 summary(gam.Kacarina)
 plot(gam.Kacarina$residuals)
 AIC(gam.Kacarina)
-hist(df$Kacarina) #Normal distribution?
+hist(df$Kacarina) #Normal-ish distribution
 #AIC = 1340.289
 #Adjusted R-Squared = 0.688
 #Deviance Explained = 70.6%
