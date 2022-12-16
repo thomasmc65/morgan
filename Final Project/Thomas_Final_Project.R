@@ -120,3 +120,4 @@ hist(df$Kacarina) #Normal-ish distribution
 #Creating a linear model for Acarina and soil temperature as this was the taxon found to be most significantly impacted by soil temperature. The RDAs indicated soil temperature had a greater impact compared to rainfall level.
 plot(Kacarina~avgmaxtemp, data = df, main = "Acarina (Kempson Sample)", xlab = "Average Maximum Soil Temperature (Degrees F)", ylab = "Density of Individuals")
 plot(Kacarina~avgmintemp, data = df, main = "Acarina (Kempson Sample)", xlab = "Average Minimum Soil Temperature (Degrees F)", ylab = "Density of Individuals")
+
